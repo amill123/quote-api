@@ -6,7 +6,6 @@ const { quotes } = require('../data');
 const { getRandomElement } = require('../utils');
 
 
-//Works
 quotesRouter.get('/random', (req, res, next) => {
     const random = getRandomElement(quotes);
     res.send({quote:random});
@@ -41,7 +40,7 @@ quotesRouter.post('/', (req, res, next) => {
 });
 
 
-//The below 3 requests will only work if we provide the quotes with IDs
+//TODO The below 3 requests are not hooked up to the front-end...yet
 
 quotesRouter.get('/:id', (req, res, next) => {
     //Checks the id is valid. If it is out of bounds it will send a 404 error.
